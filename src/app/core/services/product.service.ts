@@ -1,5 +1,6 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {ProductsApiResponse} from '../../models/productsApiResponse.type';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,6 @@ export class ProductService {
   constructor() { }
 
   getAllProducts() {
-    return this.http.get<Array<{name: string, title:string}>>('https://dummyjson.com/products');
+    return this.http.get<ProductsApiResponse>('https://dummyjson.com/products');
   }
 }
