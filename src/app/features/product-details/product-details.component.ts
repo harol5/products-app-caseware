@@ -31,7 +31,6 @@ export class ProductDetailsComponent {
         })
       )
       .subscribe(data => {
-        console.log(data);
         this.productDetails.set(data);
       })
   }
