@@ -4,6 +4,9 @@ import {catchError} from 'rxjs';
 import {Product} from '../../models/product.type';
 import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 
+/*
+* this component fetches and displays product details by id.
+*/
 @Component({
   selector: 'app-product-details',
   imports: [

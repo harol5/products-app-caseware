@@ -5,6 +5,9 @@ import {catchError} from 'rxjs';
 import {Product} from '../../models/product.type';
 import {Router} from '@angular/router';
 
+/*
+* this component fetches and displays a list of product.
+*/
 @Component({
   selector: 'app-product-list',
   imports: [ProductCardComponent],
