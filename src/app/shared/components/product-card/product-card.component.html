@@ -1,5 +1,6 @@
-<article (click)="onSelect()">
-  <img [src]="product()?.thumbnail" alt="Product" />
-  <h1>{{ product()?.title }}</h1>
-  <p>{{ product()?.description }}</p>
+<article class="product-card">
+    <img [src]="product()?.thumbnail" alt="Product" />
+    <h1>{{ product()?.title }}</h1>
+    <p>{{ product()?.description }}</p>
+    <button (click)="onSelect()">Learn More</button>
 </article>

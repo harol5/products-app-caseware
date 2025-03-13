@@ -1,0 +1,13 @@
+.product-list {
+  display: flex;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0 20%;
+}
+
+.product-card {
+  flex-basis: 20%;
+  flex-grow: 1;
+  display: flex;
+}

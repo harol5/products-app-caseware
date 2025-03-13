@@ -1,3 +1,6 @@
-@for (product of productListing(); track product.id) {
-  <app-product-card [product]="product" />
-}
+<section class="product-list">
+  @for (product of productListing(); track product.id) {
+    <app-product-card [product]="product" (productSelected)="onProductClick($event)" class="product-card" />
+  }
+</section>
+

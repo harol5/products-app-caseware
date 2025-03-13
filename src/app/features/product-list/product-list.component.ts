@@ -3,6 +3,7 @@ import {ProductService} from '../../core/services/product.service';
 import {ProductCardComponent} from '../../shared/components/product-card/product-card.component';
 import {catchError} from 'rxjs';
 import {Product} from '../../models/product.type';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -11,19 +12,27 @@ import {Product} from '../../models/product.type';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-  productService = inject(ProductService);
   productListing = signal<Array<Product>>([]);
+  private productService = inject(ProductService);
+  private router = inject(Router);
 
+  /*
+  * To demonstrate the use of output() and routing,
+  * I will navigate to the route programmatically instead
+  * of using routerLink.
+  */
+  onProductClick(productId: number) {
+    this.router.navigate(['/products', productId]);
+  }
+
+  // fetching products
   ngOnInit() {
-    console.log("ngOnInit has ran!!")
     this.productService.getAllProducts()
       .pipe(
         catchError(err => {
-          console.log(err);
           throw err;
         })
       ).subscribe(data => {
-        console.log(data);
         this.productListing.set(data.products);
       })
    }

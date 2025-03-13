@@ -1,0 +1,58 @@
+<section class="product-header">
+  <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page"> Go Back to Products</a>
+</section>
+<section class="product-details">
+  <section class="product-info">
+    <h1>{{ productDetails()?.title }}</h1>
+    <p> {{ productDetails()?.description}}</p>
+    <section class="content">
+      <article>
+        <p> Brand:</p>
+        <p> {{ productDetails()?.brand}}</p>
+      </article>
+      <article>
+        <p> Category:</p>
+        <p> {{ productDetails()?.category}}</p>
+      </article>
+      <article>
+        <p> Shipping:</p>
+        <p> {{ productDetails()?.shippingInformation}}</p>
+      </article>
+    </section>
+    <section class="footer">
+      <article>
+        <p> Price:</p>
+        <p> ${{ productDetails()?.price}}</p>
+      </article>
+      <article>
+        <p> Stock:</p>
+        <p> {{ productDetails()?.stock}}</p>
+      </article>
+      <article>
+        <p> Rating:</p>
+        <p> {{ productDetails()?.rating}}</p>
+      </article>
+    </section>
+  </section>
+  <article class="product-image-wrapper">
+    <img src="{{ productDetails()?.images?.[0] }}" alt="product image">
+  </article>
+</section>
+<section class="reviews">
+  <h1>Reviews</h1>
+  @for (review of productDetails()?.reviews; track $index) {
+    <article class="review-card">
+      <section class="reviewer-info">
+        <p> {{ review.reviewerName}} </p>
+        <p> rating: </p>
+        <p> {{ review.rating}}</p>
+      </section>
+      <section class="reviewer-comment">
+        <p> {{ review.comment}}</p>
+      </section>
+    </article>
+  }
+</section>
+
+
+
