@@ -1,25 +1,21 @@
 # ProductAppCaseware
 
-To start the application locally, run:
+To start the application locally:
 
-```bash
-ng serve
-```
+- clone the repository.
+- cd to the clone repository.
+- make sure you have installed node and npm.
+- install packages:
+- ```bash
+  npm install
+  ```
+- run the application
+- ```bash
+  ng serve
+  ``` 
 
 ## Introduction
 
-The application was created with modern angular features and syntax (signals, input, output, @for).
+The application was created with modern angular features and syntax (signals, input, output, @for) and it has the following structure:
 
 <img src="products-app-caseware.png" alt="App Architecture" width="700">
-
-
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
